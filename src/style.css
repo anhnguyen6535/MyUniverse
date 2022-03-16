@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+html,
+body{
+    overflow: hidden;
+}
+
+/* .gallery{
+    font-family: 'Bangers', cursive;
+    size: 20px;
+    color: #F19F72;
+} */

@@ -56,11 +56,18 @@ export default class Sun
 
     animation()
     {
+        this.animate = this.experience.animate
         if(this.animate === 1){
             this.mesh.rotateY(0.004)
         }
-        this.mesh.rotateY(0.004 * 0.1)
-       
+        else{
+            document.getElementById('sun').classList.remove('animate')
+            document.getElementById('sun').style.display = "block"
+
+            this.mesh.rotateY(0.004 * 0.1)
+            document.getElementById('welldone').classList.add('animate')
+            document.getElementById('direction').classList.add('animate')
+        }
     }
 
     debugGui()

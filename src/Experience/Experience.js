@@ -10,7 +10,6 @@ import Resources from './Utils/Resources.js'
 
 import sources from './sources.js'
 import Mouse from './Mouse.js'
-import Raycaster from './World/Raycaster.js'
 
 let instance = null
 
@@ -35,15 +34,20 @@ export default class Experience
         this.debug = new Debug()
         this.sizes = new Sizes()
         this.time = new Time()
+        this.countFrame = this.time.countFrame
         this.scene = new THREE.Scene()
         this.resources = new Resources(sources)
-        this.camera = new Camera()
         this.mouse = new Mouse()
-        
+        this.camera = new Camera()     
         this.renderer = new Renderer()
         this.world = new World()
-        this.animate = 1
-        this.blink = 0
+
+        // Flag Default use to communicate between Raycaster and space objects
+        this.animate = 1        //Flag for Normal speed planets
+        this.blink = 0          //Flag for Stars blink
+        this.textHover = ""      //Flag for Hover on text animation
+
+        document.getElementById('sun').classList.add('animate')
 
         // Resize event
         this.sizes.on('resize', () =>
@@ -101,7 +105,7 @@ export default class Experience
             }
         })
 
-        this.camera.controls.dispose()
+        // this.camera.controls.dispose()
         this.renderer.instance.dispose()
 
         if(this.debug.active)

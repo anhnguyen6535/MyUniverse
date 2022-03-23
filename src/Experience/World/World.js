@@ -34,26 +34,13 @@ export default class World
             this.environment = new Environment()
             this.raycaster.checkIntersection
             ([
-                this.text.text
+                this.sun.mesh,
+                this.planets.planets[0].planet,
+                this.planets.planets[1].planet,
+                this.planets.planets[2].planet,
+                this.planets.planets[3].planet,
             ])
-        })
-
-        
+        })  
     }
 
-    // update()
-    // {
-    //     if(this.door)
-    //     {
-    //         this.door.update()
-    //     }
-    //     if(this.bridge)
-    //     {
-    //         this.bridge.update()
-    //     }
-    //     if(this.robot)
-    //     {
-    //         this.robot.update()
-    //     }
-    //}
-}
+   }

@@ -20,16 +20,22 @@ export default [
         path:
         [
             'font/Bangers_Regular.json',
-            //'font/Kranky_Regular.json',
         ]
     },
     {
-        name: 'comicTexture',
+        name: 'cleanTexture',
         type: 'fontTexture',
         path:
         [
-            'font/Comic Neue_Bold Italic.json',
-            //'font/Kranky_Regular.json',
+            'font/Source Code Pro_Bold.json',
+        ]
+    },
+    {
+        name: 'robotTexture',
+        type: 'fontTexture',
+        path:
+        [
+            'font/VT323_Regular.json',
         ]
     },
     {
@@ -41,19 +47,11 @@ export default [
         ]
     },
     {
-        name: 'earthTexture',
-        type: 'allTexture',
-        path:
-        [
-            '/door/earth2.jpg',
-        ]
-    },
-    {
         name: 'sunTexture',
         type: 'allTexture',
         path:
         [
-            '/door/sun.jpg',
+            '/planets/sun.jpg',
         ]
     },
     {
@@ -61,7 +59,7 @@ export default [
         type: 'allTexture',
         path:
         [
-            '/door/neptune2.jpg',
+            '/planets/neptune.jpg',
         ]
     },
     {
@@ -69,7 +67,7 @@ export default [
         type: 'allTexture',
         path:
         [
-            '/door/mars2.jpg',
+            '/planets/mars.jpg',
         ]
     },
     {
@@ -77,7 +75,7 @@ export default [
         type: 'allTexture',
         path:
         [
-            '/door/mercury2.jpg',
+            '/planets/mercury.jpg',
         ]
     },
     {
@@ -85,39 +83,40 @@ export default [
         type: 'allTexture',
         path:
         [
-            '/door/venus2.jpg',
+            '/planets/venus.jpg',
         ]
     },
     {
-        name: 'jupiterTexture',
+        name: 'earth',
         type: 'allTexture',
         path:
         [
-            '/door/jupiter2.jpg',
+            '/planets/earth.jpg',
         ]
     },
     {
-        name: 'saturnTexture',
+        name: 'jupiter',
         type: 'allTexture',
         path:
         [
-            '/door/saturn2.jpg',
+            '/planets/jupiter.jpg',
         ]
     },
     {
-        name: 'uranusTexture',
+        name: 'saturn',
         type: 'allTexture',
         path:
         [
-            '/door/uranus2.jpg',
+            '/planets/saturn.jpg',
+        ]
+    },
+    {
+        name: 'uranus',
+        type: 'allTexture',
+        path:
+        [
+            '/planets/uranus.jpg',
         ]
     },
 
 ]
-
-//  const doorAmbientOcclusionTexture = textureLoader.load('/door/ambientOcclusion.jpg')
-//  const doorHeightTexture = textureLoader.load('/door/height.jpg')
-//  const doorNormalTexture = textureLoader.load('/door/normal.jpg')
-//  const doorMetalnessTexture = textureLoader.load('/door/metalness.jpg')
-//  const doorRoughnessTexture = textureLoader.load('/door/roughness.jpg')
-//const matcapTexture = textureLoader.load('/matcaps/1.png')

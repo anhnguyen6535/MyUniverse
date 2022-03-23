@@ -12,33 +12,53 @@ export default class Camera
         this.scene = this.experience.scene
         this.canvas = this.experience.canvas
         this.time = this.experience.time
-        // this.mouseContainer = this.experience.mouse
-        // this.parallaxX = this.mouseContainer.parallaxX
-        // this.parallaxY = this.mouseContainer.parallaxY
 
         this.setInstance()  //Setup Camera
     
-        this.setControls()  //Setup Controls
-        window.camera = this.instance
+        //this.setControls()  //Setup Controls
+        // window.camera = this.instance
+        // window.camera = this.cameraGroup
 
-        // //Animation
-        // this.time.on('tick', () =>{
-        //     this.animation()
-        // })
+        //Animation
+        this.time.on('tick', () =>{
+            this.animation()
+        })
     }
 
     //Generate Camera
     setInstance()
     {
+        this.cameraGroup = new THREE.Group()
         this.instance = new THREE.PerspectiveCamera(75, this.sizes.width / this.sizes.height, 0.1, 1000)
         this.instance.position.set(2, 30, 110)
-        //this.instance.rotation.x(20*Math.PI/180)
-        this.scene.add(this.instance)
+        this.cameraGroup.add(this.instance)
+        this.scene.add(this.cameraGroup)
+        // this.scene.add(this.instance)
     }
 
+    // setInstance()
+    // {
+    //     this.cameraGroup = new THREE.Group()
+    //     this.instance = new THREE.PerspectiveCamera(75, this.sizes.width / this.sizes.height, 0.1, 1000)
+    //     this.instance.position.set(2, 30, 110)
+    //     this.cameraGroup.add(this.instance)
+    //     this.scene.add(this.cameraGroup)
+    //     // this.scene.add(this.instance)
+    // }
+
+    // animation(){
+     
+    //     this.instance.position.x = 2 + (20 * window.parallaxX)
+    //     this.instance.position.y = 5 + (10 * (window.parallaxY))
+    //     window.camera = this.instance
+    // }
     animation(){
-        // this.instance.position.x += (this.parallaxX - this.instance.position.x) * 5 * this.time.delta
-        // this.instance.position.y += (this.parallaxY - this.instance.position.y) * 5 * this.time.delta
+        // if(window.start == false){
+        //     this.cameraGroup.position.set(2, 30, 110)
+        // }
+        this.cameraGroup.position.x = 2 + (20 * window.parallaxX)
+        this.cameraGroup.position.y = -20 + (10 * (window.parallaxY))
+        window.camera = this.instance
     }
 
     //Generate Control
@@ -65,6 +85,6 @@ export default class Camera
     //Update Control (on each frame)
     update()
     {
-        this.controls.update()
+        //this.controls.update()
     }
 }

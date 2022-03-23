@@ -16,8 +16,6 @@ export default class Text
         this.content = content
         this.size = size
         this.color = color
-        this.debug = this.experience.debug
-        this.debugGui()
 
         //Generate Mesh
         this.setTextures()
@@ -34,11 +32,7 @@ export default class Text
     setTextures()
     {
         this.textures = {}
-        this.textures.gradient = this.resources.items.gradientTexture
-        this.textures.gradient.minFilter = THREE.NearestFilter
-        this.textures.gradient.magFilter = THREE.NearestFilter
-        this.textures.gradient.generateMipmaps = false
-        this.textures.font = this.resources.items.comicTexture
+        this.textures.font = this.resources.items.cleanTexture
     }
 
     setText(){
@@ -68,34 +62,12 @@ export default class Text
     setMaterial(){
         this.textMaterial = new THREE.MeshToonMaterial({
             color: this.color,
-            gradientMap: this.textures.gradient,
+            // gradientMap: this.textures.gradient,
           });
     }
 
     animation()
     {
-        // this.animate = this.experience.animate
-        // if(this.animate === 1){
-        //     this.planet.position.x = -Math.cos(-this.time.elapsed * 0.0037) * Math.PI * 7.2 //0.0017
-        //     this.planet.position.z = -Math.sin(-this.time.elapsed * 0.0037) * Math.PI * 7.2
-        //     this.planet.rotateY(0.008)
-        // }       
-    }
-
-    debugGui()
-    {
-        this.parameters = {
-            textColor: "#652e10",
-        }
-
-        // if(this.debug.active)
-        // {
-        //     this.debugFolder = this.debug.ui.addFolder('textUniverse')
-        //     this.debugFolder
-        //         .addColor(this.parameters, 'textColor').onChange(() => 
-        //         {
-        //             this.textMaterial.color.set(this.parameters.textColor);
-        //         });
-        // }
+            
     }
 }

@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
 
+:root{
+    --typewriterSpeed: 2s;
+}
 *
 {
     margin: 0;
@@ -19,8 +24,96 @@ body{
     overflow: hidden;
 }
 
-/* .gallery{
-    font-family: 'Bangers', cursive;
-    size: 20px;
-    color: #F19F72;
-} */
+.section
+{
+    display: flex;
+    align-items: center;
+    height: 150vh;
+    position: relative;
+    font-family: 'VT323', monospace;
+    /* font-family: 'Roboto Mono', monospace; */
+    color: white;
+    text-transform: none;
+    /* font-size: 3vmin; */
+    padding-left: 5%;
+    padding-right: 10%;
+}
+
+section:nth-child(odd)
+{
+    justify-content: flex-end;
+}
+
+.type {
+    display:block;
+    /* overflow: hidden; */
+    height:1em;
+    }
+    .hello, .clickBig{
+        display: block;
+        width:0%;
+        max-width:max-content;
+        overflow: hidden;
+        height:inherit;
+        word-break:break-all;
+        animation:
+        blinkk 0.5s steps(1),  
+        t 2s linear 1 alternate,
+        m 4s steps(1) 1;
+        animation-fill-mode: forwards;
+        animation-delay: 2s;
+    }
+    .hello, .clickBig, .welldone, .direction:before {
+        content:" ";
+        display:block;
+    }
+    .clickBig.animate{
+        display: block;
+        animation:
+        blinkk 0.5s infinite steps(1),  
+        t 2s linear 1 alternate,
+        m 4s steps(1) 1;
+        animation-fill-mode: forwards;
+        animation-delay: 4s;
+    }
+    .welldone, .direction, .clickBig{
+        display: none;
+    }
+    .welldone.animate{
+        display: block;
+        width:0%;
+        max-width:max-content;
+        overflow: hidden;
+        height:inherit;
+        word-break:break-all;
+        animation:
+        blinkk 0.5s steps(1),  
+        t 2s linear 1 alternate,
+        m 4s steps(1) 1;
+        animation-fill-mode: forwards;
+    }
+    .direction.animate{
+        display: block;
+        width:0%;
+        max-width:max-content;
+        overflow: hidden;
+        height:inherit;
+        word-break:break-all;
+        animation:
+        blinkk 0.5s infinite steps(1),  
+        t 2s linear 1 alternate,
+        m 4s steps(1) 1;
+        animation-fill-mode: forwards;
+        animation-delay: 2s;
+    }
+  @keyframes blinkk{
+    0%,100%{box-shadow:5px 0 0 #0000}
+    50%    {box-shadow:5px 0 0 red  }
+  }
+  @keyframes t{
+    90%,100% {width:100%}
+  }
+
+  @keyframes m{
+    100% {transform:translateY(0)}
+  }

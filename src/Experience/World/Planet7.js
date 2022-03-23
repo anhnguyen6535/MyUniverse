@@ -34,7 +34,7 @@ export default class Planet7
         this.textures.gradient.minFilter = THREE.NearestFilter
         this.textures.gradient.magFilter = THREE.NearestFilter
         this.textures.gradient.generateMipmaps = false
-        this.textures.uranusM = this.resources.items.uranusTexture
+        this.textures.uranus = this.resources.items.uranus
     }
 
     setPlanet()
@@ -42,7 +42,7 @@ export default class Planet7
         const planetGeo = new THREE.SphereGeometry(0.7,32,16)
         const planetMaterial = new THREE.MeshToonMaterial({
             color: this.parameters.planet7Color,
-            map: this.textures.uranusM,
+            map: this.textures.uranus,
             gradientMap: this.textures.gradient,
         })
         this.planet = new THREE.Mesh(planetGeo, planetMaterial)
@@ -92,28 +92,4 @@ export default class Planet7
             // })
         }
     }
-
-    // setGroup()
-    // {
-    //     this.group2 = new THREE.Group()
-    //     this.group2.add(this.planet)
-    //     //this.group2.add(this.ring)
-    //     this.group2.position.set(50,1,1)
-    //     this.group2.rotation.y = -0.2
-    //     this.group2.scale.set(5.5,5.5,5.5)
-    //     this.scene.add(this.group2)
-    // }
-
-    
-    // setRing()
-    // {   
-    //     const ringGeo = new THREE.TorusGeometry(1, 0.2, 16, 100 )
-    //     const ringMaterial = new THREE.MeshToonMaterial({
-    //         color: this.parameters.ring3Color,
-    //         gradientMap: this.textures.gradient,
-    //     })
-    //     this.ring = new THREE.Mesh(ringGeo, ringMaterial)
-    //     this.ring.rotation.x = 90
-    // }
-
 }

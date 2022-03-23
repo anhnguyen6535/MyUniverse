@@ -29,12 +29,12 @@ export default class Planet1
 
     setTextures()
     {
-        // this.textures = {}
-        // this.textures.gradient = this.resources.items.gradientTexture
-        // this.textures.gradient.minFilter = THREE.NearestFilter
-        // this.textures.gradient.magFilter = THREE.NearestFilter
-        // this.textures.gradient.generateMipmaps = false
-        // this.textures.mercuryM = this.resources.items.mercuryTexture
+        this.textures = {}
+        this.textures.gradient = this.resources.items.gradientTexture
+        this.textures.gradient.minFilter = THREE.NearestFilter
+        this.textures.gradient.magFilter = THREE.NearestFilter
+        this.textures.gradient.generateMipmaps = false
+        this.textures.mercuryM = this.resources.items.mercury
     }
 
     setPlanet()

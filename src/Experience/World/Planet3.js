@@ -45,7 +45,7 @@ export default class Planet3
     {
         this.textures = {}
         this.textures.gradient = this.resources.items.gradientTexture
-        this.textures.earthM = this.resources.items.earthTexture
+        this.textures.earth = this.resources.items.earth
         this.textures.gradient.minFilter = THREE.NearestFilter
         this.textures.gradient.magFilter = THREE.NearestFilter
         this.textures.gradient.generateMipmaps = false
@@ -56,12 +56,10 @@ export default class Planet3
         const planetGeo = new THREE.SphereGeometry(0.7,32,16)
         const planetMaterial = new THREE.MeshToonMaterial({
             color: this.parameters.planet3Color,
-            map: this.textures.earthM,
+            map: this.textures.earth,
             gradientMap: this.textures.gradient,
         })
         this.planet = new THREE.Mesh(planetGeo, planetMaterial)
-        //this.planet.position.set(Math.cos(45) * 60,1,Math.sin(45) * 60)
-        // this.planet.rotation.y = -0.2
         this.planet.scale.set(4.8,4.8,4.8)
         // this.scene.add(this.planet)
     }
@@ -105,33 +103,8 @@ export default class Planet3
                 .onChange(() => {
                     this.planet.material.color.set(this.parameters.planet3Color)
             })
-            // this.debugFolder = this.debug.ui.addFolder('ring3')
-            // this.debugFolder
-            //     .addColor(this.parameters, 'ring3Color')
-            //     .onChange(() => {
-            //         this.ring.material.color.set(this.parameters.ring3Color)
-            // })
         }
     }
-
-    // setGroup()
-    // {
-    //     this.group2 = new THREE.Group()
-    //     this.group2.add(this.planet)
-    //     //this.group2.add(this.ring)
-    // }
-
-    
-    // setRing()
-    // {   
-    //     const ringGeo = new THREE.TorusGeometry(1, 0.2, 16, 100 )
-    //     const ringMaterial = new THREE.MeshToonMaterial({
-    //         color: this.parameters.ring3Color,
-    //         gradientMap: this.textures.gradient,
-    //     })
-    //     this.ring = new THREE.Mesh(ringGeo, ringMaterial)
-    //     this.ring.rotation.x = 90
-    // }
 
 
 }

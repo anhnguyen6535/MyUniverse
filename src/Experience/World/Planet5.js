@@ -48,7 +48,7 @@ export default class Planet5
         this.textures.gradient.minFilter = THREE.NearestFilter
         this.textures.gradient.magFilter = THREE.NearestFilter
         this.textures.gradient.generateMipmaps = false
-        this.textures.jupiterM = this.resources.items.jupiterTexture
+        this.textures.jupiter = this.resources.items.jupiter
     }
 
     setPlanet()
@@ -56,12 +56,10 @@ export default class Planet5
         const planetGeo = new THREE.SphereGeometry(0.7,32,16)
         const planetMaterial = new THREE.MeshToonMaterial({
             color: this.parameters.planet5Color,
-            map: this.textures.jupiterM,
+            map: this.textures.jupiter,
             gradientMap: this.textures.gradient,
         })
         this.planet = new THREE.Mesh(planetGeo, planetMaterial)
-        // this.planet.position.set(50,1,10)
-        // this.planet.rotation.y = -0.2
         this.planet.scale.set(7,7,7)
         // this.scene.add(this.planet)
     }
@@ -105,12 +103,6 @@ export default class Planet5
                 .onChange(() => {
                     this.planet.material.color.set(this.parameters.planet5Color)
             })
-            // this.debugFolder = this.debug.ui.addFolder('ring3')
-            // this.debugFolder
-            //     .addColor(this.parameters, 'ring3Color')
-            //     .onChange(() => {
-            //         this.ring.material.color.set(this.parameters.ring3Color)
-            // })
         }
     }
 

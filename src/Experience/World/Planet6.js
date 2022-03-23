@@ -48,7 +48,7 @@ export default class Planet6
         this.textures.gradient.minFilter = THREE.NearestFilter
         this.textures.gradient.magFilter = THREE.NearestFilter
         this.textures.gradient.generateMipmaps = false
-        this.textures.saturnM = this.resources.items.saturnTexture
+        this.textures.saturn = this.resources.items.saturn
     }
 
     setRing()
@@ -67,7 +67,7 @@ export default class Planet6
         const planetGeo = new THREE.SphereGeometry(0.7,32,16)
         const planetMaterial = new THREE.MeshToonMaterial({
             color: this.parameters.planet6Color,
-            map: this.textures.saturnM,
+            map: this.textures.saturn,
             gradientMap: this.textures.gradient,
         })
         this.planet = new THREE.Mesh(planetGeo, planetMaterial)
@@ -116,12 +116,6 @@ export default class Planet6
                 .onChange(() => {
                     this.planet.material.color.set(this.parameters.planet6Color)
             })
-            // this.debugFolder = this.debug.ui.addFolder('ring3')
-            // this.debugFolder
-            //     .addColor(this.parameters, 'ring3Color')
-            //     .onChange(() => {
-            //         this.ring.material.color.set(this.parameters.ring3Color)
-            // })
         }
     }
 

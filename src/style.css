@@ -21,11 +21,15 @@
 
 html,
 body{
+    margin: 0; 
+    height: 100%;
+    width: 100%;
     overflow: hidden;
 }
 
 .section
 {
+    position: fixed;
     display: flex;
     align-items: center;
     height: 150vh;

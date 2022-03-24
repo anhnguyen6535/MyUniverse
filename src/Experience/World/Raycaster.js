@@ -68,18 +68,4 @@ export default class Raycaster
             } 
         }
     }
-
-    // animation(arr)
-    // {
-    //     this.raycaster.setFromCamera(this.mouse, window.camera)
-
-    //     const intersectSun = this.raycaster.intersectObject(arr[0])
-    //     let lenP1 = intersectSun.length
-    //     if (lenP1 > 0) {
-    //         this.mouseContainer.intersect_sun = 1
-    //         console.log(0)
-    //     } else {
-    //         this.mouseContainer.intersect_sun = 2
-    //     }
-    // }
 }

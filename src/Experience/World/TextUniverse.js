@@ -21,11 +21,6 @@ export default class TextUniverse
         this.setGeo()
         this.setMaterial()
         this.setText()
-
-        //Animation
-        this.time.on('tick', () =>{
-            this.animation()
-        })
     }
 
     setTextures()
@@ -51,7 +46,6 @@ export default class TextUniverse
             'Anh\'s universe',
             {
                 font: this.textures.font,
-                // color: this.parameters.textColor,
                 size: 10,
                 height: 0.2,
                 curveSegments: 12,
@@ -70,16 +64,6 @@ export default class TextUniverse
             color: this.parameters.textColor,
             gradientMap: this.textures.gradient,
           });
-    }
-
-    animation()
-    {
-        // this.animate = this.experience.animate
-        // if(this.animate === 1){
-        //     this.planet.position.x = -Math.cos(-this.time.elapsed * 0.0037) * Math.PI * 7.2 //0.0017
-        //     this.planet.position.z = -Math.sin(-this.time.elapsed * 0.0037) * Math.PI * 7.2
-        //     this.planet.rotateY(0.008)
-        // }       
     }
 
     debugGui()

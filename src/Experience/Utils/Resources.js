@@ -76,8 +76,6 @@ export default class Resources extends EventEmitter
         if(this.loaded === this.toLoad)
         {
             this.trigger('ready')
-            // window.flag = true
-            // console.log(window)
         }
     }
 }

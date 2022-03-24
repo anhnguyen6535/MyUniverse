@@ -63,7 +63,6 @@ export default class Star
 
     animation(){
         if(this.experience.blink == 1){
-            //this.time.countFrame ++
             if(this.time.countFrame % 20 == 0){
                 if(this.flag){
                     this.mesh.material.size = 1.2

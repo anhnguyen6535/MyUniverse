@@ -7,12 +7,6 @@ export default class Time extends EventEmitter
     {
         super()
 
-        //Loading Obj
-        this.experience = new Experience()
-        // this.world = this.experience.world
-        // this.sun = this.world.sun
-        // this.planet1 = this.world.planet1
-
         // Setup
         this.start = Date.now()
         this.current = this.start
@@ -37,25 +31,11 @@ export default class Time extends EventEmitter
         this.elapsed = this.current - this.start
         this.countFrame ++
 
-        //Update obj
-        // this.sun.rotateY(0.2)
-        // //torus.rotateX(0.2)
-
-        // this.planet1.position.x = Math.cos(elapsedTime) * Math.PI * 3
-        // this.planet1.position.z = Math.sin(elapsedTime) * Math.PI * 3
-        //planet.rotateY(0.1)
-        //ring.rotateX(0.1)
-        //group.rotateX(Math.PI )
-        //group.position.y += 1
-        //camera.lookAt(sun.position)
-
         this.trigger('tick')
 
         window.requestAnimationFrame(() =>
         {
             this.tick()
         })
-
-        //this.trigger('')
     }
 }

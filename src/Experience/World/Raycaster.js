@@ -34,37 +34,39 @@ export default class Raycaster
     
     animation(sun,subArr)
     {
-        this.raycaster.setFromCamera({x: this.mouse.x / 0.5, y: this.mouse.y /-0.5}, window.camera)
-        // this.scene.add(new THREE.ArrowHelper(this.raycaster.ray.direction, this.raycaster.ray.origin, 300, 0xff0000) );
+        if(window.start == true){
+            this.raycaster.setFromCamera({x: this.mouse.x / 0.5, y: this.mouse.y /-0.5}, window.camera)
+            // this.scene.add(new THREE.ArrowHelper(this.raycaster.ray.direction, this.raycaster.ray.origin, 300, 0xff0000) );
 
-        const intersectSun = this.raycaster.intersectObject(sun)
-        let lenP1 = intersectSun.length
-        if (lenP1 > 0) {
-            this.mouseContainer.intersect_sun = 1
-        } else {
-            this.mouseContainer.intersect_sun = 2
-        }
-
-        const intersectPlanet = this.raycaster.intersectObjects(subArr)
-        if(intersectPlanet.length > 0){
-            if(intersectPlanet[0].object == subArr[0]){
-                this.mouseContainer.intersect_planet = 1
-                this.experience.textHover = "earth"
-            }else if(intersectPlanet[0].object == subArr[1]){
-                this.mouseContainer.intersect_planet = 2
-                this.experience.textHover = "jupiter"
-            }else if(intersectPlanet[0].object == subArr[2]){
-                this.mouseContainer.intersect_planet = 3
-                this.experience.textHover = "saturn"
-            }else if(intersectPlanet[0].object == subArr[3]){
-                this.mouseContainer.intersect_planet = 4
-                this.experience.textHover = "uranus"
+            const intersectSun = this.raycaster.intersectObject(sun)
+            let lenP1 = intersectSun.length
+            if (lenP1 > 0) {
+                this.mouseContainer.intersect_sun = 1
+            } else {
+                this.mouseContainer.intersect_sun = 2
             }
+
+            const intersectPlanet = this.raycaster.intersectObjects(subArr)
+            if(intersectPlanet.length > 0){
+                if(intersectPlanet[0].object == subArr[0]){
+                    this.mouseContainer.intersect_planet = 1
+                    this.experience.textHover = "earth"
+                }else if(intersectPlanet[0].object == subArr[1]){
+                    this.mouseContainer.intersect_planet = 2
+                    this.experience.textHover = "jupiter"
+                }else if(intersectPlanet[0].object == subArr[2]){
+                    this.mouseContainer.intersect_planet = 3
+                    this.experience.textHover = "saturn"
+                }else if(intersectPlanet[0].object == subArr[3]){
+                    this.mouseContainer.intersect_planet = 4
+                    this.experience.textHover = "uranus"
+                }
+            }
+            else{
+                this.mouseContainer.intersect_planet = 5
+                this.experience.textHover = 5
+            } 
         }
-        else{
-            this.mouseContainer.intersect_planet = 5
-            this.experience.textHover = 5
-        } 
     }
 
     // animation(arr)

@@ -11,6 +11,7 @@ export default class Mouse
         this.intersect_sun = 2
         this.intersect_planet = 5
         this.click = 0
+        window.start = false 
         this.setInstance()  //Setup mouse
 
         
@@ -21,11 +22,11 @@ export default class Mouse
     {
         this.mouse = new THREE.Vector2();
         window.addEventListener("mousemove", (event) => {
+            window.start = true 
             this.mouse.x = (event.clientX / this.sizes.width) - 0.5;
             this.mouse.y = (event.clientY / this.sizes.height) - 0.5;
             window.parallaxX = this.mouse.x * 0.5
             window.parallaxY = - this.mouse.y * 0.5
-            // window.start = true 
         });
 
         window.addEventListener("click", () => {

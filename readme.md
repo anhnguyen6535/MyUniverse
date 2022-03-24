@@ -1,3 +1,5 @@
+https://anh-universe.vercel.app/
+
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
 Run this followed commands:
@@ -11,4 +13,7 @@ npm run dev
 
 # Build for production in the dist/ directory
 npm run build
+
+# Debug room
+add #debug-room to the link
 ```
